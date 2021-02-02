@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="form-wrapper">
+        <div class="circle top big"></div>
+        <div class="circle bottom"></div>
+        <form action="" class="login">
+            <h1 class="form-heading">Login to access your accout</h1>
+            <div class="input-wrapper">
+                <label for="username" id="username-label">Username or Email</label>
+                <input name="username" id="username" type="text">
+            </div>
+            <div class="input-wrapper">
+                <label for="password" id="password-label">Password</label>
+                <input name="password" id="password" type="password">
+            </div>
+            <div class="input-wrapper">
+                <input name="submit" id="submit" type="submit" value="Login">
+            </div>
+        </form>
+    </div>
+    <script>
+        const username = document.getElementById("username");
+        const password = document.getElementById("password");
+        const pLabel = document.getElementById('password-label');
+        const uLabel = document.getElementById('username-label');
+        username.addEventListener("focus", function(){
+            if (username.value.trim() == '') {
+                uLabel.style.top = '-.5rem';
+                uLabel.style.fontSize = '1.5rem';
+            }
+        })
+        username.addEventListener("focusout", function(){
+            if (username.value.trim() == '') {
+                uLabel.style.top = '2rem';
+                uLabel.style.fontSize = null;
+            }
+        })
+        password.addEventListener("focus", function(){
+            if (password.value.trim() == '') {
+                pLabel.style.top = '-.5rem';
+                pLabel.style.fontSize = '1.5rem';
+            }
+        })
+        password.addEventListener("focusout", function(){
+            if (password.value.trim() == '') {
+                pLabel.style.top = '2rem';
+                pLabel.style.fontSize = null;
+            }
+        })
+
+    </script>
+</body>
+</html>
